@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FIFA Ultimate Team trader app
 
-## Available Scripts
+This is a relatively simple, client-side application that I made to help me do some fairly basic trading on FIFA's Ultimate Team game mode.
 
-In the project directory, you can run:
+There is a marketplace in which you can buy and sell all sorts of player cards.
 
-### `npm start`
+When I add a player, I can specify its current lowest value on the market and the amount of profit I'm looking to make from said card. With the aid of a couple of helper functions, the app accounts for tax, proper rounding of values and outputs a Recommended Purchase Price for which I can safely buy a player and know that I'm getting a decent deal.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The item rows are re-rendered periodically to keep track of how long ago an item was added to the table.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The values are output in a nice table format. The table is sortable by clicking on the appropriate headings.
 
-### `npm test`
+## Technologies used:
+- [x] React
+- [x] Bootstrap 4 for the UI (just a bootswatch theme pulled in from a CDN, nothing too fancy, I'm looking for usability and functionality in this app, not a particularly unique design)
+- [x] date-fns library to display nicely formatted "date added" values
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Possible todos:
+The app is perfectly usable for my current needs as is. However, there are a couple of ways in which it could be extended in the future:
 
-### `npm run build`
+- [ ] Pull in player data from an API (player names, images, etc)
+- [ ] Account for different types of cards for the same player
+- [ ] Bulk adding of players instead of one-by-one submission
+- [ ] Add live demo link to readme
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### SVGs used:
+* [Zondicons - A set of free premium SVG icons. By Steve Schoger](http://www.zondicons.com/)
