@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import h from "./helpers";
+import { calcRPP, roundRPP, formatRPP } from "./helpers";
 import distanceInWordsStrict from "date-fns/distance_in_words_strict";
 
 class TableItemRow extends Component {
@@ -35,9 +35,9 @@ class TableItemRow extends Component {
                 <td>{this.props.LBIN}</td>
                 <td>{this.props.desiredProfit}</td>
                 <td className="h4 font-weight-bold">
-                    {h.formatRPP(
-                        h.roundRPP(
-                            h.calcRPP(this.props.LBIN, this.props.desiredProfit)
+                    {formatRPP(
+                        roundRPP(
+                            calcRPP(this.props.LBIN, this.props.desiredProfit)
                         )
                     )}
                 </td>

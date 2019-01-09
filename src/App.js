@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Table from "./Table";
 import AddItemForm from "./AddItemForm";
 import uuidv1 from "uuid/v1";
-import h from "./helpers";
+import { calcRPP, roundRPP, compareFunc } from "./helpers";
 
 class App extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class App extends Component {
     }
 
     onAdd(itemObj) {
-        const RPP = h.roundRPP(h.calcRPP(itemObj.LBIN, itemObj.desiredProfit));
+        const RPP = roundRPP(calcRPP(itemObj.LBIN, itemObj.desiredProfit));
 
         const finalItemObj = {
             name: itemObj.name,
@@ -29,18 +29,16 @@ class App extends Component {
             RPP,
             createdAt: new Date(),
             id: uuidv1()
-        }
+        };
 
-        const items = this.state.items.slice();
-        items.push(finalItemObj);
+        const items = this.state.items.concat(finalItemObj);
 
         this.setState({ items });
     }
 
     onDelete(itemID) {
-        let items = this.state.items.slice();
-        items = items.filter(item => item.id !== itemID);
-
+        const items = this.state.items.filter(item => item.id !== itemID);
+        
         this.setState({ items });
     }
 
@@ -48,10 +46,10 @@ class App extends Component {
         let items = this.state.items.slice();
 
         if (this.state.sortOrder === "asc") {
-            items = items.sort((a, b) => h.compareFunc(a, b, sortProp, "desc"));
+            items = items.sort((a, b) => compareFunc(a, b, sortProp, "desc"));
             this.setState({ items, sortBy: sortProp, sortOrder: "desc" });
         } else {
-            items = items.sort((a, b) => h.compareFunc(a, b, sortProp, "asc"));
+            items = items.sort((a, b) => compareFunc(a, b, sortProp, "asc"));
             this.setState({ items, sortBy: sortProp, sortOrder: "asc" });
         }
     }
