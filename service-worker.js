@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/fut-trader/precache-manifest.9b8e1c0ef025172e91d6cdb999994997.js"
+  "/fut-trader/precache-manifest.09b3b6f6b717e830c1a02b0f9d61c05a.js"
 );
 
 workbox.clientsClaim();

@@ -1,11 +1,11 @@
 {
-  "main.js": "/fut-trader/static/js/main.7189a578.chunk.js",
-  "main.js.map": "/fut-trader/static/js/main.7189a578.chunk.js.map",
+  "main.js": "/fut-trader/static/js/main.9fed9fd6.chunk.js",
+  "main.js.map": "/fut-trader/static/js/main.9fed9fd6.chunk.js.map",
   "static/js/1.348ccdf2.chunk.js": "/fut-trader/static/js/1.348ccdf2.chunk.js",
   "static/js/1.348ccdf2.chunk.js.map": "/fut-trader/static/js/1.348ccdf2.chunk.js.map",
   "runtime~main.js": "/fut-trader/static/js/runtime~main.4416fa56.js",
   "runtime~main.js.map": "/fut-trader/static/js/runtime~main.4416fa56.js.map",
   "index.html": "/fut-trader/index.html",
-  "precache-manifest.9b8e1c0ef025172e91d6cdb999994997.js": "/fut-trader/precache-manifest.9b8e1c0ef025172e91d6cdb999994997.js",
+  "precache-manifest.09b3b6f6b717e830c1a02b0f9d61c05a.js": "/fut-trader/precache-manifest.09b3b6f6b717e830c1a02b0f9d61c05a.js",
   "service-worker.js": "/fut-trader/service-worker.js"
 }
