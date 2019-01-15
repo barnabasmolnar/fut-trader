@@ -5,6 +5,10 @@ const TableHeader = props => {
         props.onSort(sortProp);
     }
 
+    function handleDeleteAll() {
+        props.onDeleteAll();
+    }
+
     return (
         <thead>
             <tr>
@@ -35,7 +39,9 @@ const TableHeader = props => {
                 >
                     Added
                 </th>
-                <th width="10%">Delete</th>
+                <th width="10%" onClick={handleDeleteAll}>
+                    Delete All
+                </th>
             </tr>
         </thead>
     );

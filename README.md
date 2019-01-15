@@ -21,8 +21,10 @@ The app is perfectly usable for my current needs as is. However, there are a cou
 - [ ] Pull in player data from an API (player names, images, etc)
 - [ ] Account for different types of cards for the same player
 - [ ] Bulk adding of players instead of one-by-one submission
-- [ ] Add filter by name input field
-- [ ] Add delete all items button
+
+## Done:
+- [x] Add filter by name input field
+- [x] Add delete all items button
 
 ## Live demo
 A live demo can be viewed at https://barnabasmolnar.github.io/fut-trader/

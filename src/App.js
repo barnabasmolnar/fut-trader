@@ -3,6 +3,7 @@ import Table from "./Table";
 import AddItemForm from "./AddItemForm";
 import uuidv1 from "uuid/v1";
 import { calcRPP, roundRPP, compareFunc } from "./helpers";
+import FilterByNameForm from "./FilterByNameForm";
 
 class App extends Component {
     constructor(props) {
@@ -11,12 +12,15 @@ class App extends Component {
         this.state = {
             items: [],
             sortBy: "createdAt",
-            sortOrder: "asc"
+            sortOrder: "asc",
+            filterInput: ""
         };
 
         this.onAdd = this.onAdd.bind(this);
         this.onDelete = this.onDelete.bind(this);
+        this.onDeleteAll = this.onDeleteAll.bind(this);
         this.onSort = this.onSort.bind(this);
+        this.handleFilterInputChange = this.handleFilterInputChange.bind(this);
     }
 
     onAdd(itemObj) {
@@ -38,8 +42,12 @@ class App extends Component {
 
     onDelete(itemID) {
         const items = this.state.items.filter(item => item.id !== itemID);
-        
+
         this.setState({ items });
+    }
+
+    onDeleteAll() {
+        this.setState({ items: [] });
     }
 
     onSort(sortProp) {
@@ -54,16 +62,26 @@ class App extends Component {
         }
     }
 
+    handleFilterInputChange(filterInput) {
+        this.setState({ filterInput });
+    }
+
     render() {
         return (
             <div className="container my-5">
                 <AddItemForm onAdd={this.onAdd} />
+                <FilterByNameForm
+                    filterInput={this.state.filterInput}
+                    onFilterInputChange={this.handleFilterInputChange}
+                />
                 <div className="my-5">
                     <div className="table-responsive">
                         <Table
                             items={this.state.items}
                             onDelete={this.onDelete}
+                            onDeleteAll={this.onDeleteAll}
                             onSort={this.onSort}
+                            filterInput={this.state.filterInput}
                         />
                     </div>
                 </div>
